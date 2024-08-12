@@ -8,6 +8,9 @@
 #include "EnhancedInputSubsystems.h"
 
 APlayerPawn::APlayerPawn()
+	: MovementSpeed(1000.0f)
+	, RotationSpeed(100.0f)
+	, bCanMove(true)
 {
 	PrimaryActorTick.bCanEverTick = true;
 	CapsuleComp = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CapsuleComp"));
@@ -26,10 +29,6 @@ APlayerPawn::APlayerPawn()
 		if (CarSpriteComp)
 			CarSpriteComp->SetupAttachment(RootComponent);
 	}
-
-	MovementSpeed = 1000.0f;
-	RotationSpeed = 100.0f;
-	bCanMove = true;
 }
 
 void APlayerPawn::BeginPlay()

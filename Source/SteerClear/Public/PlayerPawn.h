@@ -25,11 +25,11 @@ public:
 		class UInputMappingContext* InputMappingContext;
 	UPROPERTY(EditAnywhere)
 		class UInputAction* MoveInputAction;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere)
 		float MovementSpeed;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere)
 		float RotationSpeed;
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UPROPERTY(VisibleAnywhere)
 		bool bCanMove;
 
 	APlayerPawn();

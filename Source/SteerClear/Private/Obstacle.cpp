@@ -47,7 +47,7 @@ void AObstacle::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor*
 			{
 				if (ASCGameMode* GM = World->GetAuthGameMode<ASCGameMode>())
 				{
-					GM->ResetRacerLevel(ObstacleType);
+					GM->ResetTopDownLevel(ObstacleType);
 				}
 			}
 		}

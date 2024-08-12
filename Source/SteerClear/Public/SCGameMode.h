@@ -14,7 +14,7 @@ class STEERCLEAR_API ASCGameMode : public AGameModeBase
 
 public:
 
-	void ResetRacerLevel(const EObstacleType ObstacleType);
+	void ResetTopDownLevel(const EObstacleType ObstacleType);
 	void OnResetGameTimerTimeout();
 
 protected:

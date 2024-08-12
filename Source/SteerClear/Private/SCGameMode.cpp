@@ -8,13 +8,13 @@ void ASCGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	if (USCGameInstance* RGI = GetGameInstance<USCGameInstance>())
+	if (USCGameInstance* GI = GetGameInstance<USCGameInstance>())
 	{
-		RGI->PlayBGMusic();
+		GI->PlayBGMusic();
 	}
 }
 
-void ASCGameMode::ResetRacerLevel(const EObstacleType ObstacleType)
+void ASCGameMode::ResetTopDownLevel(const EObstacleType ObstacleType)
 {
 	float TimerDelay = 0.5;
 	switch (ObstacleType)
