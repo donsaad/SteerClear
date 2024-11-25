@@ -5,7 +5,7 @@
 #include "GameFramework/GameModeBase.h"
 #include "SCGameMode.generated.h"
 
-enum class EObstacleType : uint8;
+//enum class EObstacleType : uint8;
 
 UCLASS()
 class STEERCLEAR_API ASCGameMode : public AGameModeBase
@@ -14,13 +14,14 @@ class STEERCLEAR_API ASCGameMode : public AGameModeBase
 
 public:
 
-	void ResetTopDownLevel(const EObstacleType ObstacleType);
-	void OnResetGameTimerTimeout();
+	UPROPERTY()
+	class APCGActor* PCGActor;
+	//void HandlePlayerHitObstacle(const EObstacleType ObstacleType);
+	void ResetPlayerLevel(const bool bNewLevel);
 
 protected:
-	
+
 	FTimerHandle ResetGameTimerHandle;
 
 	void BeginPlay() override;
-
 };

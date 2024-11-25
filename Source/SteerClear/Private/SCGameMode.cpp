@@ -7,29 +7,15 @@
 void ASCGameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 	if (USCGameInstance* GI = GetGameInstance<USCGameInstance>())
 	{
 		GI->PlayBGMusic();
 	}
 }
 
-void ASCGameMode::ResetTopDownLevel(const EObstacleType ObstacleType)
+void ASCGameMode::ResetPlayerLevel(const bool bNewLevel)
 {
-	float TimerDelay = 0.5;
-	switch (ObstacleType)
-	{
-		case EObstacleType::Fence:
-			TimerDelay = 1.0f;
-			break;
-		case EObstacleType::FinishLine:
-			TimerDelay = 3.0f;
-			break;
-	}
-	GetWorldTimerManager().SetTimer(ResetGameTimerHandle, this, &ASCGameMode::OnResetGameTimerTimeout, 1.0f);
-}
-
-void ASCGameMode::OnResetGameTimerTimeout()
-{
+	/* Saad: HACK: Re-Open same level #TODO: properly reset level state */
 	UGameplayStatics::OpenLevel(this, FName("MainLevel"));
 }

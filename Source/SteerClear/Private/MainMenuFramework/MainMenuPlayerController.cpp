@@ -7,4 +7,5 @@ void AMainMenuPlayerController::BeginPlay()
 
 	FInputModeUIOnly InputModeUI;
 	SetInputMode(InputModeUI);
+	SetShowMouseCursor(true);
 }

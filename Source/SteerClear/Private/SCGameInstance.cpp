@@ -3,9 +3,10 @@
 #include "Components/AudioComponent.h"
 #include "Kismet/GameplayStatics.h"
 
-USCGameInstance::USCGameInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
+USCGameInstance::USCGameInstance(const FObjectInitializer& ObjectInitializer) 
+	: Super(ObjectInitializer)
+	, bPLayingMusic(false)
 {
-	bPLayingMusic = false;
 }
 
 void USCGameInstance::PlayBGMusic()

@@ -3,6 +3,7 @@
 
 ATopDownPlayerController::ATopDownPlayerController()
 {
+
 }
 
 void ATopDownPlayerController::BeginPlay()
@@ -11,4 +12,5 @@ void ATopDownPlayerController::BeginPlay()
 
 	FInputModeGameOnly InputModeGameOnly;
 	SetInputMode(InputModeGameOnly);
+	SetShowMouseCursor(false);
 }

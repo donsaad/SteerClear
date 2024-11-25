@@ -16,17 +16,19 @@ class STEERCLEAR_API APCGActor : public AActor
 
 public:
 	APCGActor();
-
+	int32 GetCurrentSeed() const;
 protected:
 
 	UPROPERTY(EditAnywhere)
-		TObjectPtr <USceneComponent> DefaultSceneComp;
+	TObjectPtr <USceneComponent> DefaultSceneComp;
 	UPROPERTY(EditAnywhere)
-		TObjectPtr <UPCGComponent> PCGComp;
+	TObjectPtr <UPCGComponent> PCGComp;
 	UPROPERTY(EditAnywhere)
-		TObjectPtr <USplineComponent> SplineComp;
+	TObjectPtr <USplineComponent> SplineComp;
 
 	virtual void BeginPlay() override;
+	/* #TODO: guarantee unique seed */
+	void RegenerateWithRandomSeed();
 
 public:
 

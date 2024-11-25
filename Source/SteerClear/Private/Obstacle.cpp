@@ -6,6 +6,7 @@
 #include "SCGameMode.h"
 #include "SCTypes.h"
 #include "Kismet/GameplayStatics.h"
+#include "UI/TopDownHUD.h"
 
 AObstacle::AObstacle()
 {
@@ -43,11 +44,11 @@ void AObstacle::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor*
 		{
 			PlayerPawn->bCanMove = false;
 			UGameplayStatics::PlaySound2D(this, HitSound);
-			if (UWorld* World = GetWorld())
+			if (APlayerController* PC = PlayerPawn->GetController<APlayerController>())
 			{
-				if (ASCGameMode* GM = World->GetAuthGameMode<ASCGameMode>())
+				if (ATopDownHUD* HUD = PC->GetHUD<ATopDownHUD>())
 				{
-					GM->ResetTopDownLevel(ObstacleType);
+					HUD->NotifyGameOver(ObstacleType == EObstacleType::FinishLine);
 				}
 			}
 		}
